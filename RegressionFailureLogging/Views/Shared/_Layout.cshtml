@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Failure</title>
+
+    @* CSS *@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="~/Scripts/Library/tablefilter/dist/tablefilter/style/tablefilter.css">
+    @Styles.Render("~/Content/RegressionTracking") @* Custom Stylesheet *@
+</head>
+<body>
+
+    @* Header *@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @*<div class="container">*@
+        <div class="navbar-header">
+            <h1 style="color:white; margin-left:300px; margin-bottom:10px;">Regression Failure Summary</h1>
+            @*@Html.ActionLink("Regression Failure Summary", "Index", "Index", new { area = "" }, new { @class = "navbar-brand" })*@
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*<li>@Html.ActionLink("Details Page", "Index", "Details Page")</li>*@
+                <li style="font-size:20px; margin-top:20px; margin-left:30px;"><a href=@Url.Action("Index", "Home", null, Request.Url.Scheme)>Daily Summary</a></li>
+                <li style="font-size:20px; margin-top:20px; margin-left:30px;"><a href=@Url.Action("Index2", "Home", null, Request.Url.Scheme)>Build Summary</a></li>
+            </ul>
+            <img align="right" style="width: 93px; height: 42px; margin-right: 320px; margin-top: 10px;" class="dg-NavbarHeader-logoImage" src="https://cdn6.agoda.net/images/mvc/default/agoda-logo.svg" title="Agoda" alt="Agoda" onerror="this.src='https://cdn6.agoda.net/images/MVC/default/agoda-logo.png';this.onerror=null;">
+            @*@Html.Partial("_LoginPartial")*@
+        </div>
+        @*</div>*@
+    </div>
+
+    @* Body *@
+    <div class="container container__override">
+        @RenderBody()
+    </div>
+
+    @* Footer *@
+    <footer align="center" style="margin-top: 50px; background-color:black; padding: 20px;">
+        <p style="color:white; font-size:15px;"><b>&copy; @DateTime.Now.Year - Agoda Service Co. Ltd.</b></p>
+    </footer>
+
+    @* JS *@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/respond")
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script> @* github.com/uxsolutions/bootstrap-datepicker *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script> @* chartjs.org *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script src="~/Scripts/Library/tablefilter/dist/tablefilter/tablefilter.js"></script>
+    @Scripts.Render("~/Script/RegressionTracking")
+    @RenderSection("scripts", required: false) @* Custom JS *@
+</body>
+</html>

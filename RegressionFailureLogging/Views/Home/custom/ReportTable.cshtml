@@ -1,0 +1,40 @@
+﻿@model List<RegressionFailureTracking.Models.FailureReport>
+
+<table id="regression-table" class="table table-hover regression-table">
+    @* Header *@
+    <tr class="regression-table__header" style="background-color: #c9c9c9; table-layout:auto;">
+        <th>TestCase</th>
+        <th>RGNumber</th>
+        <th>Time</th>
+        <th>Category</th>
+        <th>Comment</th>
+        <th>Detail</th>
+        <th>Test Report</th>
+    </tr>
+    @* Result Records *@
+    @foreach (var record in Model)
+    {
+        <tr class="regression-table__record" style="text-align:center; width: 100px;" data-id=@record.RecordId>
+            <td class="regression-table__tc" >@record.TestCase</td>
+            <td class="regression-table__rg" style="text-align:center;">@record.RgNumber</td>
+            <td class="regression-table__time" style="text-align:center;">@record.TimeString</td>
+            <td style="text-align:center;">
+                @{Html.RenderPartial("~/Views/Home/custom/DropDown.cshtml", @record.Category);}
+            </td>
+            <td style="text-align:center;">
+                <input class="regression-table__comment" type="text" size="15" value="@record.Comment">
+            </td>
+            <td class="regression-table__detail";>
+                <span class="main-msg">@record.Details.MainMessage</span>
+                @if (record.Details.IsOverflow)
+                {
+                    <span class="of-msg hide">@record.Details.OverflowMessage</span>
+                    <a class="toggle-detail-btn" href="#">show more</a>
+                }
+            </td>
+            <td class="regression-table__tr" style="text-align:center;">
+                <a href="@record.TestReport" target="_blank">test report</a>
+            </td>
+        </tr>
+    }
+</table>

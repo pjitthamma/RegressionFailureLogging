@@ -1,0 +1,17 @@
+﻿@model string
+
+@{ 
+    var text = (string.IsNullOrEmpty(Model)) ? "Please select.." : Model;
+}
+
+<div class="btn-group">
+    <button type="button" class="btn btn-info btn-sm dropdown-button" data-toggle="dropdown">@text</button>
+    <button type="button" class="btn btn-info btn-sm dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item">Script bug</a></li>
+
+    </ul>
+</div>

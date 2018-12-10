@@ -1,0 +1,16 @@
+﻿@model RegressionFailureTracking.Models.ViewModels.BuildSummaryViewModel
+
+<div class="BuildSummary BuildSummary__Container">
+    <p>Total build run = @Model.TotalBuild</p>
+    <p>Pass build = @Model.PassBuild</p>
+    <p>Failed build = @Model.FailedBuild</p>
+    <p>Stability percentage = @Model.Stability%</p>
+    <p>Failure breakdown</p>
+    
+    <ul class="BuildSummary__BreakdownInfo">
+        @foreach (var reason in Model.FailureBreakdown)
+        {
+            <li class="BuildSummary__BreakdownInfo--label">@reason</li>    
+        }
+    </ul>
+</div>

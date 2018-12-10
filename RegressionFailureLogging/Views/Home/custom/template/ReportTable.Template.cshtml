@@ -1,0 +1,38 @@
+﻿<script id="report-record-template" type="text/x-handlebars-template">
+    <table id="regression-table" class="table table-hover regression-table">
+        <tbody>
+            <tr class="regression-table__header" style="background-color: #c9c9c9;">
+                <th>TestCase</th>
+                <th>RGNumber</th>
+                <th>&nbsp&nbspTime&nbsp&nbsp</th>
+                <th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCategory&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                <th>&nbsp&nbspComment&nbsp&nbsp</th>
+                <th>Details</th>
+                <th>Test Report</th>
+            </tr>
+            {{#each reportList}}
+            <tr class="regression-table__record" style="text-align:center;" data-id="{{RecordId}}">
+                <td class="regression-table__tc">{{TestCase}}</td>
+                <td class="regression-table__rg">{{RgNumber}}</td>
+                <td class="regression-table__time">{{TimeString}}</td>
+                <td>
+                    @{Html.RenderPartial("~/Views/Home/custom/template/DropDown.Template.cshtml");}
+                </td>
+                <td>
+                    <input class="regression-table__comment" type="text" value="{{Comment}}">
+                </td>
+                <td class="regression-table__detail">
+                    <span class="main-msg">{{Details.MainMessage}}</span>
+                    {{#if Details.IsOverflow}}
+                    <span class="of-msg hide">{{Details.OverflowMessage}}</span>
+                    <a class="toggle-detail-btn" href="#">show more</a>
+                    {{/if}}
+                </td>
+                <td class="regression-table__tr">
+                    <a href="{{TestReport}}" target="_blank">test report</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
+</script>

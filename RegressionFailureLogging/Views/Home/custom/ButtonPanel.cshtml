@@ -1,0 +1,14 @@
+﻿@model bool
+
+@{ var state = (Model) ? "": "disabled";}
+
+<div class="button__container">
+    <button id="search-button" type="button" class="btn btn-info @state">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        Search
+    </button>
+    <button id="save-button" type="button" class="btn btn-success save-button @state">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+        Save
+    </button>
+</div>

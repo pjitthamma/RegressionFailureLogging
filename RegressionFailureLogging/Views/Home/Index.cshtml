@@ -1,0 +1,24 @@
+﻿@model RegressionFailureTracking.Models.ViewModels.RegressionReportViewModel
+<input id="pagename" value="index" />
+
+@* Control Panel *@
+<header class="menu-control">
+    @{Html.RenderPartial("~/Views/Home/custom/Calendar.cshtml", false);}
+    @{Html.RenderPartial("~/Views/Home/custom/ButtonPanel.cshtml", true);}
+    @{Html.RenderPartial("~/Views/Home/custom/StatusLabel.cshtml");}
+</header>
+
+@* Table *@
+<div id="regression-table-location" style="max-width: 120%;">
+    @if (Model.FailureReports == null || !Model.FailureReports.Any())
+    {
+        <h3 class='regression-table__noresult' style='text-align: center;'>No record for regression failure with this specific date</h3>
+    }
+    else
+    {
+        Html.RenderPartial("~/Views/Home/custom/ReportTable.cshtml", Model.FailureReports);
+    }
+</div>
+
+@* Handlebars Template *@
+@{Html.RenderPartial("~/Views/Home/custom/TemplateContainer.cshtml");}

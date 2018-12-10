@@ -1,0 +1,113 @@
+﻿.container__override { width: 2500px; }
+
+/* Control Panel */
+.first-layer { 
+    overflow: hidden; 
+    margin: 20px 0;
+}
+
+.first-layer .input-group { margin-bottom: 10px; }
+
+.first-layer button { width: 90px; }
+
+.menu-control { 
+    overflow: hidden; 
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+.menu-control .input-group.date .input-group-addon {
+    cursor: auto;
+}
+
+.button__container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-button {
+    margin-left: 30px;
+}
+
+#save-button {
+    margin-left: 60px;
+}
+
+#status-label { 
+    margin-top: 20px;
+    margin-left: 30px;
+    height: 50px;
+}
+
+#status-label div{
+    color: green;
+    font-weight: bold;
+}
+/* End Control Panel */
+
+/* Report Table */
+.regression-table {
+    text-align: center;
+    table-layout: fixed;
+}
+
+.regression-table__header { 
+    border-bottom: 2px solid grey; 
+    background-color: #c9c9c9;
+}
+
+.regression-table tbody tr th {
+    font-size: 24px;
+    padding: 20px 5px;
+    text-align: center;
+    vertical-align: middle;
+    /*width: 220px;*/
+}
+
+.regression-table tbody tr td {
+    padding: 15px 5px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.regression-table__tr a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.regression-table .regression-table__noresult {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.toggle-logmsg-btn {
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-group .dropdown-button {
+    width: 220px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+/* End Report Table */
+
+/* Calendar */
+.calendar__container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.calendar__button-wrapper {
+    position: absolute;
+    right: -30px;
+    z-index: 100;
+    padding: 8px 15px;
+}
+
+.calendar__button-wrapper span { left: -4px; }
+/* End Calendar */

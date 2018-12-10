@@ -1,0 +1,20 @@
+﻿@model bool
+
+@{
+    var today = DateTime.Now.ToString("dd/MM/yyyy");
+}
+
+<div class="input-group date calendar__container">
+
+    @if (Model) //date range
+    {
+        <span> date range</span>
+    }
+    else
+    {
+        <input id="calendar-filtering" type="text" class="form-control" value=@today>
+        <div id="calendar-filtering-2" class="input-group-addon calendar__button-wrapper">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    }
+</div>

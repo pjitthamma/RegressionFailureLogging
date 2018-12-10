@@ -1,0 +1,26 @@
+﻿@*@model List<RegressionFailureTracking.Models.SummaryReport>
+
+<table class="table table-hover">
+    <tr>
+        <th></th>
+        <th>CANCLLED</th>
+        <th>FAILURE</th>
+        <th>Failure Rate</th>
+        <th>SUCCESS</th>
+        <th>Success Rate</th>
+        <th>TOTAL</th>
+    </tr>
+
+    @foreach (var record in Model)
+    {
+        <tr>
+            <td>@record.Name</td>
+            <td>@record.Cancle</td>
+            <td>@record.Failure</td>
+            <td>@record.FailurePercentage %</td>
+            <td>@record.Success</td>
+            <td>@record.SuccessPercentage %</td>
+            <td>@record.Total</td>
+        </tr>
+    }
+</table>*@

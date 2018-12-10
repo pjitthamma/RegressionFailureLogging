@@ -1,0 +1,13 @@
+﻿.BuildSummary__Container {
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+.BuildSummary__Container > p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.BuildSummary__BreakdownInfo .BuildSummary__BreakdownInfo--label {
+    font-size: 16px;
+}
